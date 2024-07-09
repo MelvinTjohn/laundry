@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Laundries - Laundry Category Bootstrap Responsive Website Template - Home : W3Layouts</title>
+    <!-- Google fonts -->
+    <link href="//fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Josefin+Sans:400,400i,500,600,700&display=swap"
+		rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Lato:300,400,400i,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!-- Template CSS -->
+    <!-- Template CSS Style link -->
+    <link rel="stylesheet" href="{%static 'assets/css/style-starter.css' %}">
+</head>
+<body>
+<style>
+  .dropdown-btn {
+  background-color: #000000;
+  color: #f7f1f1;
+  padding: 10px;
+  width: 320px;
+  cursor: pointer;
+  z-index: 10;
+  overflow: hidden;
+-webkit-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+
+.dropdown-area {
+  width: 320px;
+  transform: translateY(-35px);
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+
+}
+
+.dropdown-area ul {
+  padding: 0;
+  list-style: none;
+}
+
+.dropdown-area ul li {
+  border-bottom: 1px solid #eee;
+  padding: 10px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.dropdown-area ul li:nth-child(1) {
+  background-color: #ebe6e6;
+  margin-top: -20px;
+  transition: .3s;
+}
+
+.dropdown-area ul li:nth-child(2) {
+  background-color: #f5f1f1;
+  margin-top: -40px;
+  transition: .5s;
+}
+
+.dropdown-area ul li:nth-child(3) {
+  background-color: #f7f2f2;
+  margin-top: -40px;
+  transition: .6s;
+  color: #161515;
+}
+
+.dropdown-area ul li:nth-child(4) {
+  background-color: #656565;
+  margin-top: -40px;
+  transition: .7s;
+  color: #181818;
+}
+
+.dropdown-area ul li:nth-child(5) {
+  background-color: #484848;
+  margin-top: -40px;
+  transition: .8s;
+  color: #191818;
+}
+
+
+.activeDropArea {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(-15px);
+}
+
+.activeDropArea ul li:nth-child(1),.activeDropArea ul li:nth-child(2),.activeDropArea ul li:nth-child(3),.activeDropArea ul li:nth-child(4),.activeDropArea ul li:nth-child(5) {
+  margin-top: 0;
+}
+  </style>
+  	<script>let dropArea = document.getElementById('dropArea');
+		function openDropdown() {
+			console.log("Dropdown");
+			dropArea.classList.toggle("activeDropArea");
+		}</script>
+	<script>
+		function copyTextValue() {
+			var e = document.getElementById("select");
+			var val = e.options[e.selectedIndex].value;
+			document.getElementById("1").value = val;
+		}
+	</script>
+<!-- header -->
+    <header id="site-header" class="fixed-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="">
+                    <span>L</span>aundries<i class="fas fa-hands-wash"></i>
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+                    <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="admin_home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="adminviewuser">View User</a>
+                        </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="adminviewemployee">View Employee</a>
+                          </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="adminviewwork">View Work</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="adminpaymentdetails">Payed Details</a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="adminviewservices">View Services</a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="add_services">Add Services</a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="adminaddemployee">Add Employee</a>
+
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link " href="adminviewcustomerreview">Customer Review</a>
+
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link " href="home">Logout</a>
+
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+<img src="{%static 'assets/images/11.webp'%}" alt="" width="1441" height="500">
+{% if messages %}
+    <div class="container">
+        <div class="alert alert-success alert-dismissible messages" style="margin-top:100px;">
+            {% for message in messages %}
+            {{message}}
+                        <button type="button" class="close" data-dismiss="alert">*</button>
+        {% endfor %}
+
+        </div>
+    </div>
+    {% endif %}
+<div class="map-full">
+	<div class="contact-box">
+        <div class="container"><br>
+			<table class="table table-bordered">
+				<thead>
+				<tr>
+<!--                    <th>ID</th>-->
+                    <th>Name</th>
+					<th>Email</th>
+                    <th>Address</th>
+                    <th>Pincode</th>
+					<th>phonenumber</th>
+					<th>Service Name</th>
+                    <th>Service Rate</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                    <th   style="text-align: center;">status</th>
+    	        </tr>
+		        </thead>
+				<tbody>
+				{% for i in d %}
+				<tr>
+
+                    <td>{{i.customer.u_name}}</td>
+					<td>{{i.customer.email}}</td>
+					<td>{{i.customer.u_adrs}}</td>
+                    <td>{{i.customer.pncd}}</td>
+        			<td>{{i.customer.phonenumber}}</td>
+                    <td>{{i.s_name}}</td>
+                    <td>{{i.s_price}}</td>
+                    <td>{{i.description}}</td>
+                    <td>{{i.date}}</td>
+			<td><form method="POST" action="../../statusup/{{i.booking_id}}">
+							{% csrf_token %}
+							<select name="status" style="margin-top: 14px;">
+							  <option value="Pending" {% if i.status == "Pending" %}selected{% endif %}>Pending</option>
+							  <option value="Accepted" {% if i.status == "Accepted" %}selected{% endif %}>Accepted</option>
+								<option value="Finished" {% if i.status == "Finished" %}selected{% endif %}>Finished</option>
+
+							  <option value="Cancelled" {% if i.status == "Cancelled" %}selected{% endif %}>Cancelled</option>
+							</select>
+                <br><br>
+                                <button type="submit" class="btn btn-primary">Send</button>
+<!--							<button type="submit" class="fa fa-send-o" style="margin-top: 10px; margin-left: 16px;"></button>-->
+						  </form>
+<!--				<button id="toggle-list-view-btn" onclick="toggleListView()">Toggle List View</button>-->
+			</td>
+
+				</tr>
+    			{% endfor %}
+    			</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<script>
+			// When the user scrolls down 20px from the top of the document, show the button
+			window.onscroll = function () {
+				scrollFunction()
+			};
+
+			function scrollFunction() {
+				if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+					document.getElementById("movetop").style.display = "block";
+				} else {
+					document.getElementById("movetop").style.display = "none";
+				}
+			}
+
+			// When the user clicks on the button, scroll to the top of the document
+			function topFunction() {
+				document.body.scrollTop = 0;
+				document.documentElement.scrollTop = 0;
+			}
+		</script>
+</body>
+</html>
+<script src="{% static 'assets/js/jquery-3.3.1.min1.js'%}"></script>
+<!-- disable body scroll which navbar is in active -->
+
+<!--//-->
+<script>
+	$(function () {
+		$('.navbar-toggler').click(function () {
+			$('body').toggleClass('noscroll');
+		})
+	});
+</script>
+<!--/scroll-down-JS-->
+<!-- stats -->
+<script src="{% static 'assets/js/jquery.waypoints.min.js'%}"></script>
+<script src="{% static 'assets/js/jquery.countup.js'%}"></script>
+<script>
+	$('.counter').countUp();
+</script>
+<!-- //stats -->
+<!-- //script -->
+
+<script src="{% static 'assets/js/1.js'%}"></script>

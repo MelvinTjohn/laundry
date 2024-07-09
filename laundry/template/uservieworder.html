@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Laundries - Laundry Category Bootstrap Responsive Website Template - Contact Us </title>
+    <!-- Google fonts -->
+    <link href="//fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Template CSS Style link -->
+    <link rel="stylesheet" href="{%static 'assets/css/style-starter.css '%}">
+<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <!-- header -->
+    <header id="site-header" class="fixed-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="home">
+                    <span>L</span>aundries<i class="fas fa-hands-wash"></i>
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+                    <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="user">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="userabout">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="userservices">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="usercontact">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="uservieworder">vieworder</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="bookingdetails">Booking Details</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="userprofile">Userprofile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="home">Logout</a>
+
+                        </li>
+                    </ul>
+<!--                    <form action="#error" method="GET" class="d-flex search-header ms-lg-2">-->
+<!--                        <input class="form-control" type="search" placeholder="Enter Keyword..." aria-label="Search"-->
+<!--                            required>-->
+<!--                        <button class="btn btn-style" type="submit"><i class="fas fa-search"></i></button>-->
+<!--                    </form>-->
+<!--                </div>-->
+                <!-- toggle switch for light and dark theme -->
+<!--                <div class="cont-ser-position">-->
+<!--                    <nav class="navigation">-->
+<!--                        <div class="theme-switch-wrapper">-->
+<!--                            <label class="theme-switch" for="checkbox">-->
+<!--                                <input type="checkbox" id="checkbox">-->
+<!--                                <div class="mode-container">-->
+<!--                                    <i class="gg-sun"></i>-->
+<!--                                    <i class="gg-moon"></i>-->
+<!--                                </div>-->
+<!--                            </label>-->
+<!--                        </div>-->
+<!--                    </nav>-->
+<!--                </div>-->
+                <!-- //toggle switch for light and dark theme -->
+            </nav>
+        </div>
+    </header>
+    <!-- //header -->
+
+    <!-- inner banner -->
+    <section class="inner-banner py-5">
+        <div class="w3l-breadcrumb py-lg-5">
+            <div class="container pt-5 pb-sm-4 pb-2">
+                <h4 class="inner-text-title font-weight-bold pt-5">ORDER</h4>
+                <ul class="breadcrumbs-custom-path">
+                    <li><a href="home">Home</a></li>
+                    <li class="active"><i class="fas fa-angle-right mx-2"></i>vieworder</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <div class="map-full">
+	<div class="contact-box">
+        <div class="container"><br>
+			<table class="table table-bordered">
+				<thead>
+				<tr>
+                    <th>Name</th>
+					<th>price</th>
+					<th>description</th>
+					<th>Date</th>
+                    <th style="text-align: center;">status</th>
+			        <th colspan="3"  style="text-align: center;">Action</th>
+		  		</tr>
+		  		</thead>
+				<tbody>
+				{% for i in d %}
+				<tr>
+                    <td>{{i.s_name}}</td>
+					<td>{{i.s_price}}</td>
+					<td>{{i.description}}</td>
+        			<td>{{i.date}}</td>
+                    <td>{{i.status}}</td>
+                {% if i.status == 'Accepted' or i.status == 'pending' %}
+			<td><a href="../u_bookreq_cancel/{{i.pk}}"><input type="submit" class="ml-lg-3 mt-lg-0 mt-3 btn btn-warning " value="cancel"></a></td>
+             {%endif%}
+                    {% if i.status == 'Accepted' %}
+			<td><a href="payment/{{i.s_price}}/{{i.pk}}"><input type="submit" class="ml-lg-3 mt-lg-0 mt-3 btn btn-primary " value="payment"></a></td>
+
+
+			{%endif%}
+			{% if i.status == 'Finished' %}
+			<td><a href="../send_review_form/{{i.pk}}/"><input type="submit" class="ml-lg-3 mt-lg-0 mt-3 btn btn-info " value="send review"></a></td>
+			{%endif%}
+
+				</tr>
+    			{% endfor %}
+    			</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+</body>
+</html>
+<!-- <footer class="w3l-footer-29-main">-->
+<!--        <div class="footer-29-w3l py-5">-->
+<!--            <div class="container pt-md-5 pt-4">-->
+<!--                <div class="w3l-footer-text-style">-->
+<!--                    <div class="footer-list-cont d-flex align-items-center justify-content-between mb-5">-->
+<!--                        <h6 class="foot-sub-title">Contact Us</h6>-->
+<!--&lt;!&ndash;                        <div class="main-social-footer-29">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <a href="#facebook" class="facebook"><i class="fab fa-facebook-f"></i></a>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <a href="#twitter" class="twitter"><i class="fab fa-twitter"></i></a>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <a href="#instagram" class="instagram"><i class="fab fa-instagram"></i></a>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <a href="#linkedin" class="linkedin"><i class="fab fa-linkedin-in"></i></a>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="row footer-top-29 pt-lg-5 pt-sm-4">-->
+<!--                    <div class="col-lg-3 col-sm-6">-->
+<!--                        <div class="address-grid">-->
+<!--                            <h5>St'augustine building,kadavanthara,kochi<br>682020 <br> Kerala.</h5>-->
+<!--                            <h5 class="mt-sm-5 mt-4">Everyday: <span> 7 AM - 8 PM</span></h5>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-lg-3 col-sm-6 mt-sm-0 mt-4">-->
+<!--                        <div class="address-grid">-->
+<!--                            <h5 class="top-bold">Phone</h5>-->
+<!--                            <h5 class="phone-number-text mt-2"><a href="tel:+1(21) 112 7368">+1(21) 112 7368</a></h5>-->
+<!--                        </div>-->
+<!--                        <div class="address-grid mt-sm-5 mt-4">-->
+<!--                            <h5 class="top-bold">E-mail</h5>-->
+<!--                            <h5 class="email-cont-text mt-1"> <a href="mailto:laundr@maiiesl.com"-->
+<!--                                    class="mail">laundries@mail.com</a></h5>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-lg-2 col-md-6 col-sm-5 footer-list-menu ps-lg-0 mt-lg-0 mt-sm-5 mt-4">-->
+<!--                        <div class="address-grid">-->
+<!--                            <h5 class="mb-sm-4 mb-3 pb-lg-2 top-bold">Support Links</h5>-->
+<!--                            <ul>-->
+<!--                                <li><a href="about">Privacy Policy</a></li>-->
+<!--                                <li><a href="about"> Terms of Service</a></li>-->
+<!--                                <li><a href="contact">Contact us</a></li>-->
+<!--                                <li><a href="contact"> Support</a></li>-->
+<!--                            </ul>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--&lt;!&ndash;                    <div class="address-grid col-lg-4 col-md-6 col-sm-7 mt-lg-0 mt-sm-5 mt-4 w3l-footer-16-main">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <h5 class="top-bold">Subscribe Here</h5>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <form action="#" class="subscribe d-flex mt-sm-4 mt-3 pt-lg-2 mb-4" method="post">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <input type="email" name="email" placeholder="Email Address" required="">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <button><span class="fa fa-paper-plane" aria-hidden="true"></span></button>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </form>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <p>Subscribe to our mailing list and get updates to your email inbox.</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--                &lt;!&ndash; copyright &ndash;&gt;-->
+<!--                <div class="w3l-copyright text-center mt-lg-5 mt-4 pt-sm-4 pt-3">-->
+<!--                    <p class="copy-footer-29">© 2022 Laundries. All rights reserved. Design by <a-->
+<!--                            href="https://w3layouts.com/" target="_blank">-->
+<!--                            Melvin's</a></p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </footer>-->
+<!--    &lt;!&ndash; //footer &ndash;&gt;-->
+
+<!--    &lt;!&ndash; Js scripts &ndash;&gt;-->
+<!--    &lt;!&ndash; move top &ndash;&gt;-->
+<!--    <button onclick="topFunction()" id="movetop" title="Go to top">-->
+<!--        <span class="fas fa-level-up-alt" aria-hidden="true"></span>-->
+<!--    </button>-->
+<!--    <script>-->
+<!--        // When the user scrolls down 20px from the top of the document, show the button-->
+<!--        window.onscroll = function () {-->
+<!--            scrollFunction()-->
+<!--        };-->
+
+<!--        function scrollFunction() {-->
+<!--            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {-->
+<!--                document.getElementById("movetop").style.display = "block";-->
+<!--            } else {-->
+<!--                document.getElementById("movetop").style.display = "none";-->
+<!--            }-->
+<!--        }-->
+
+<!--        // When the user clicks on the button, scroll to the top of the document-->
+<!--        function topFunction() {-->
+<!--            document.body.scrollTop = 0;-->
+<!--            document.documentElement.scrollTop = 0;-->
+<!--        }-->
+<!--    </script>-->
+<!--    &lt;!&ndash; //move top &ndash;&gt;-->
+
+<!--    &lt;!&ndash; common jquery plugin &ndash;&gt;-->
+<!--    <script src="{%static 'assets/js/jquery-3.3.1.min.js' %}"></script>-->
+<!--    &lt;!&ndash; //common jquery plugin &ndash;&gt;-->
+
+<!--    &lt;!&ndash; theme switch js (light and dark)&ndash;&gt;-->
+<!--    <script src="{%static 'assets/js/theme-change.js '%}"></script>-->
+<!--    &lt;!&ndash; //theme switch js (light and dark)&ndash;&gt;-->
+
+<!--    &lt;!&ndash; MENU-JS &ndash;&gt;-->
+<!--    <script>-->
+<!--        $(window).on("scroll", function () {-->
+<!--            var scroll = $(window).scrollTop();-->
+
+<!--            if (scroll >= 80) {-->
+<!--                $("#site-header").addClass("nav-fixed");-->
+<!--            } else {-->
+<!--                $("#site-header").removeClass("nav-fixed");-->
+<!--            }-->
+<!--        });-->
+
+<!--        //Main navigation Active Class Add Remove-->
+<!--        $(".navbar-toggler").on("click", function () {-->
+<!--            $("header").toggleClass("active");-->
+<!--        });-->
+<!--        $(document).on("ready", function () {-->
+<!--            if ($(window).width() > 991) {-->
+<!--                $("header").removeClass("active");-->
+<!--            }-->
+<!--            $(window).on("resize", function () {-->
+<!--                if ($(window).width() > 991) {-->
+<!--                    $("header").removeClass("active");-->
+<!--                }-->
+<!--            });-->
+<!--        });-->
+<!--    </script>-->
+<!--    &lt;!&ndash; //MENU-JS &ndash;&gt;-->
+
+<!--    &lt;!&ndash; disable body scroll which navbar is in active &ndash;&gt;-->
+<!--    <script>-->
+<!--        $(function () {-->
+<!--            $('.navbar-toggler').click(function () {-->
+<!--                $('body').toggleClass('noscroll');-->
+<!--            })-->
+<!--        });-->
+<!--    </script>-->
+<!--    &lt;!&ndash; //disable body scroll which navbar is in active &ndash;&gt;-->
+
+<!--    &lt;!&ndash; bootstrap &ndash;&gt;-->
+<!--    <script src="{%static 'assets/js/bootstrap.min.js '%}"></script>-->
+<!--    &lt;!&ndash; //bootstrap &ndash;&gt;-->
+<!--    &lt;!&ndash; //Js scripts &ndash;&gt;-->
+<!--</body>-->
+
+<!--</html>-->

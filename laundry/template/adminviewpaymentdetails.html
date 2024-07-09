@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Laundries - Laundry Category Bootstrap Responsive Website Template - Home : W3Layouts</title>
+    <!-- Google fonts -->
+    <link href="//fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Josefin+Sans:400,400i,500,600,700&display=swap"
+		rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Lato:300,400,400i,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!-- Template CSS -->
+    <!-- Template CSS Style link -->
+    <link rel="stylesheet" href="{%static 'assets/css/style-starter.css' %}">
+</head>
+<body>
+<style>
+  .dropdown-btn {
+  background-color: #000000;
+  color: #f7f1f1;
+  padding: 10px;
+  width: 320px;
+  cursor: pointer;
+  z-index: 10;
+  overflow: hidden;
+-webkit-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+
+.dropdown-area {
+  width: 320px;
+  transform: translateY(-35px);
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+
+}
+
+.dropdown-area ul {
+  padding: 0;
+  list-style: none;
+}
+
+.dropdown-area ul li {
+  border-bottom: 1px solid #eee;
+  padding: 10px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.dropdown-area ul li:nth-child(1) {
+  background-color: #ebe6e6;
+  margin-top: -20px;
+  transition: .3s;
+}
+
+.dropdown-area ul li:nth-child(2) {
+  background-color: #f5f1f1;
+  margin-top: -40px;
+  transition: .5s;
+}
+
+.dropdown-area ul li:nth-child(3) {
+  background-color: #f7f2f2;
+  margin-top: -40px;
+  transition: .6s;
+  color: #161515;
+}
+
+.dropdown-area ul li:nth-child(4) {
+  background-color: #656565;
+  margin-top: -40px;
+  transition: .7s;
+  color: #181818;
+}
+
+.dropdown-area ul li:nth-child(5) {
+  background-color: #484848;
+  margin-top: -40px;
+  transition: .8s;
+  color: #191818;
+}
+
+
+.activeDropArea {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(-15px);
+}
+
+.activeDropArea ul li:nth-child(1),.activeDropArea ul li:nth-child(2),.activeDropArea ul li:nth-child(3),.activeDropArea ul li:nth-child(4),.activeDropArea ul li:nth-child(5) {
+  margin-top: 0;
+}
+  </style>
+  	<script>let dropArea = document.getElementById('dropArea');
+		function openDropdown() {
+			console.log("Dropdown");
+			dropArea.classList.toggle("activeDropArea");
+		}</script>
+	<script>
+		function copyTextValue() {
+			var e = document.getElementById("select");
+			var val = e.options[e.selectedIndex].value;
+			document.getElementById("1").value = val;
+		}
+	</script>
+<!-- header -->
+    <header id="site-header" class="fixed-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="">
+                    <span>L</span>aundries<i class="fas fa-hands-wash"></i>
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+                    <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="admin_home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="adminviewuser">View User</a>
+                        </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="adminviewemployee">View Employee</a>
+                          </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="adminviewwork">View Work</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="adminviewpaymentdetails">Payed Details</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="adminviewservices">View Services</a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="add_services">Add Services</a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="adminaddemployee">Add Employee</a>
+
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link " href="adminviewcustomerreview">Customer Review</a>
+
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link " href="home">Logout</a>
+
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- //header -->
+
+    <!-- inner banner -->
+    <section class="inner-banner py-5">
+        <div class="w3l-breadcrumb py-lg-5">
+            <div class="container pt-5 pb-sm-4 pb-2">
+                <h4 class="inner-text-title font-weight-bold pt-5">ORDER</h4>
+                <ul class="breadcrumbs-custom-path">
+                    <li><a href="home">Home</a></li>
+                    <li class="active"><i class="fas fa-angle-right mx-2"></i>vieworder</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <div class="map-full">
+	<div class="contact-box">
+        <div class="container"><br>
+			<table class="table table-striped mt-5" border="2">
+		<thead>
+			<tr>
+<!--				<th>id</th>-->
+				<th>name</th>
+				<th>email</th>
+				<th>address</th>
+				<th>number</th>
+				<th>service_name</th>
+				<th>created_at</th>
+				<th>service_price</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for i in c %}
+			<tr>
+<!--				<td>{{ i.id }}</td>-->
+				<td>{{ i.booked_name }}</td>
+				<td>{{ i.email }}</td>
+				<td>{{ i.address }}</td>
+				<td>{{ i.number }}</td>
+				<td>{{ i.s_name }}</td>
+				<td>{{ i.created_at }}</td>
+				<td>{{ i.s_price }}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+		</div>
+	</div>
+</div>
+</body>
+</html>
+<!-- <footer class="w3l-footer-29-main">-->
+<!--        <div class="footer-29-w3l py-5">-->
+<!--            <div class="container pt-md-5 pt-4">-->
+<!--                <div class="w3l-footer-text-style">-->
+<!--                    <div class="footer-list-cont d-flex align-items-center justify-content-between mb-5">-->
+<!--                        <h6 class="foot-sub-title">Contact Us</h6>-->
+<!--&lt;!&ndash;                        <div class="main-social-footer-29">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <a href="#facebook" class="facebook"><i class="fab fa-facebook-f"></i></a>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <a href="#twitter" class="twitter"><i class="fab fa-twitter"></i></a>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <a href="#instagram" class="instagram"><i class="fab fa-instagram"></i></a>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <a href="#linkedin" class="linkedin"><i class="fab fa-linkedin-in"></i></a>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="row footer-top-29 pt-lg-5 pt-sm-4">-->
+<!--                    <div class="col-lg-3 col-sm-6">-->
+<!--                        <div class="address-grid">-->
+<!--                            <h5>St'augustine building,kadavanthara,kochi<br>682020 <br> Kerala.</h5>-->
+<!--                            <h5 class="mt-sm-5 mt-4">Everyday: <span> 7 AM - 8 PM</span></h5>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-lg-3 col-sm-6 mt-sm-0 mt-4">-->
+<!--                        <div class="address-grid">-->
+<!--                            <h5 class="top-bold">Phone</h5>-->
+<!--                            <h5 class="phone-number-text mt-2"><a href="tel:+1(21) 112 7368">+1(21) 112 7368</a></h5>-->
+<!--                        </div>-->
+<!--                        <div class="address-grid mt-sm-5 mt-4">-->
+<!--                            <h5 class="top-bold">E-mail</h5>-->
+<!--                            <h5 class="email-cont-text mt-1"> <a href="mailto:laundr@maiiesl.com"-->
+<!--                                    class="mail">laundries@mail.com</a></h5>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-lg-2 col-md-6 col-sm-5 footer-list-menu ps-lg-0 mt-lg-0 mt-sm-5 mt-4">-->
+<!--                        <div class="address-grid">-->
+<!--                            <h5 class="mb-sm-4 mb-3 pb-lg-2 top-bold">Support Links</h5>-->
+<!--                            <ul>-->
+<!--                                <li><a href="about">Privacy Policy</a></li>-->
+<!--                                <li><a href="about"> Terms of Service</a></li>-->
+<!--                                <li><a href="contact">Contact us</a></li>-->
+<!--                                <li><a href="contact"> Support</a></li>-->
+<!--                            </ul>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--&lt;!&ndash;                    <div class="address-grid col-lg-4 col-md-6 col-sm-7 mt-lg-0 mt-sm-5 mt-4 w3l-footer-16-main">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <h5 class="top-bold">Subscribe Here</h5>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <form action="#" class="subscribe d-flex mt-sm-4 mt-3 pt-lg-2 mb-4" method="post">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <input type="email" name="email" placeholder="Email Address" required="">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <button><span class="fa fa-paper-plane" aria-hidden="true"></span></button>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </form>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <p>Subscribe to our mailing list and get updates to your email inbox.</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--                &lt;!&ndash; copyright &ndash;&gt;-->
+<!--                <div class="w3l-copyright text-center mt-lg-5 mt-4 pt-sm-4 pt-3">-->
+<!--                    <p class="copy-footer-29">© 2022 Laundries. All rights reserved. Design by <a-->
+<!--                            href="https://w3layouts.com/" target="_blank">-->
+<!--                            Melvin's</a></p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </footer>-->
+<!--    &lt;!&ndash; //footer &ndash;&gt;-->
+
+<!--    &lt;!&ndash; Js scripts &ndash;&gt;-->
+<!--    &lt;!&ndash; move top &ndash;&gt;-->
+<!--    <button onclick="topFunction()" id="movetop" title="Go to top">-->
+<!--        <span class="fas fa-level-up-alt" aria-hidden="true"></span>-->
+<!--    </button>-->
+<!--    <script>-->
+<!--        // When the user scrolls down 20px from the top of the document, show the button-->
+<!--        window.onscroll = function () {-->
+<!--            scrollFunction()-->
+<!--        };-->
+
+<!--        function scrollFunction() {-->
+<!--            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {-->
+<!--                document.getElementById("movetop").style.display = "block";-->
+<!--            } else {-->
+<!--                document.getElementById("movetop").style.display = "none";-->
+<!--            }-->
+<!--        }-->
+
+<!--        // When the user clicks on the button, scroll to the top of the document-->
+<!--        function topFunction() {-->
+<!--            document.body.scrollTop = 0;-->
+<!--            document.documentElement.scrollTop = 0;-->
+<!--        }-->
+<!--    </script>-->
+<!--    &lt;!&ndash; //move top &ndash;&gt;-->
+
+<!--    &lt;!&ndash; common jquery plugin &ndash;&gt;-->
+<!--    <script src="{%static 'assets/js/jquery-3.3.1.min.js' %}"></script>-->
+<!--    &lt;!&ndash; //common jquery plugin &ndash;&gt;-->
+
+<!--    &lt;!&ndash; theme switch js (light and dark)&ndash;&gt;-->
+<!--    <script src="{%static 'assets/js/theme-change.js '%}"></script>-->
+<!--    &lt;!&ndash; //theme switch js (light and dark)&ndash;&gt;-->
+
+<!--    &lt;!&ndash; MENU-JS &ndash;&gt;-->
+<!--    <script>-->
+<!--        $(window).on("scroll", function () {-->
+<!--            var scroll = $(window).scrollTop();-->
+
+<!--            if (scroll >= 80) {-->
+<!--                $("#site-header").addClass("nav-fixed");-->
+<!--            } else {-->
+<!--                $("#site-header").removeClass("nav-fixed");-->
+<!--            }-->
+<!--        });-->
+
+<!--        //Main navigation Active Class Add Remove-->
+<!--        $(".navbar-toggler").on("click", function () {-->
+<!--            $("header").toggleClass("active");-->
+<!--        });-->
+<!--        $(document).on("ready", function () {-->
+<!--            if ($(window).width() > 991) {-->
+<!--                $("header").removeClass("active");-->
+<!--            }-->
+<!--            $(window).on("resize", function () {-->
+<!--                if ($(window).width() > 991) {-->
+<!--                    $("header").removeClass("active");-->
+<!--                }-->
+<!--            });-->
+<!--        });-->
+<!--    </script>-->
+<!--    &lt;!&ndash; //MENU-JS &ndash;&gt;-->
+
+<!--    &lt;!&ndash; disable body scroll which navbar is in active &ndash;&gt;-->
+<!--    <script>-->
+<!--        $(function () {-->
+<!--            $('.navbar-toggler').click(function () {-->
+<!--                $('body').toggleClass('noscroll');-->
+<!--            })-->
+<!--        });-->
+<!--    </script>-->
+<!--    &lt;!&ndash; //disable body scroll which navbar is in active &ndash;&gt;-->
+
+<!--    &lt;!&ndash; bootstrap &ndash;&gt;-->
+<!--    <script src="{%static 'assets/js/bootstrap.min.js '%}"></script>-->
+<!--    &lt;!&ndash; //bootstrap &ndash;&gt;-->
+<!--    &lt;!&ndash; //Js scripts &ndash;&gt;-->
+<!--</body>-->
+
+<!--</html>-->

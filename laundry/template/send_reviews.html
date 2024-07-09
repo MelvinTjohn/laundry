@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Laundries - Laundry Category Bootstrap Responsive Website Template - Contact Us </title>
+    <!-- Google fonts -->
+    <link href="//fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Template CSS Style link -->
+    <link rel="stylesheet" href="{%static 'assets/css/style-starter.css '%}">
+<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{% static 'assets/css/reviewstyle.css'%}" type="text/css" media="all" />
+    <script>
+         addEventListener("load", function () {
+         	setTimeout(hideURLbar, 0);
+         }, false);
+
+         function hideURLbar() {
+         	window.scrollTo(0, 1);
+         }
+      </script>
+</head>
+
+<body>
+    <!-- header -->
+    <header id="site-header" class="fixed-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="home">
+                    <span>L</span>aundries<i class="fas fa-hands-wash"></i>
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+                    <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="../../user">Home</a>
+                        </li>
+
+
+
+                    </ul>
+<!--                    <form action="#error" method="GET" class="d-flex search-header ms-lg-2">-->
+<!--                        <input class="form-control" type="search" placeholder="Enter Keyword..." aria-label="Search"-->
+<!--                            required>-->
+<!--                        <button class="btn btn-style" type="submit"><i class="fas fa-search"></i></button>-->
+<!--                    </form>-->
+<!--                </div>-->
+                <!-- toggle switch for light and dark theme -->
+<!--                <div class="cont-ser-position">-->
+<!--                    <nav class="navigation">-->
+<!--                        <div class="theme-switch-wrapper">-->
+<!--                            <label class="theme-switch" for="checkbox">-->
+<!--                                <input type="checkbox" id="checkbox">-->
+<!--                                <div class="mode-container">-->
+<!--                                    <i class="gg-sun"></i>-->
+<!--                                    <i class="gg-moon"></i>-->
+<!--                                </div>-->
+<!--                            </label>-->
+<!--                        </div>-->
+<!--                    </nav>-->
+<!--                </div>-->
+                <!-- //toggle switch for light and dark theme -->
+            </nav>
+        </div>
+    </header>
+    <br><br><br><br><br><br>
+<!--{% if messages %}-->
+<!--<div class="container">-->
+<!--<div class="alert alert-success alert-dismissible messages">-->
+<!--    {% for message in messages %}-->
+<!--    <button type="button" class="close" data-dismiss="alert">&times;</button>-->
+<!--     {{message}}-->
+<!--  </div>-->
+<!--     {% endfor %}-->
+<!--</div>-->
+<!--{% endif %}-->
+<!--	---------------------------------------------------->
+      <!-- //title -->
+      <!-- content -->
+      <div class="porduct-order-agile">
+		  <h3 style="color:#ff5e00; text-align: center;">Rating Website Form</h3>
+		  <br>
+         <form method="post" action="../../send_reviews/{{s.pk}}">
+            {% csrf_token %}
+			 {{ form.as_p }}
+
+            <div class="main">
+               <div class="form-group-w3l">
+                  <p>Name</p>
+                  <input type="text" name="Name" value="{{user.u_name}}" placeholder="" required="">
+               </div>
+               <div class="form-group-w3l">
+                  <p>Service Name</p>
+                  <input type="text" name="s_name" value="{{s.s_name}}" placeholder="" required="">
+               </div>
+            </div>
+            <div class="main">
+               <div class="form-group-w3l">
+                  <p>Phone</p>
+                  <input type="text" name="Phone" value="{{user.phonenumber}}" placeholder="" required="">
+               </div>
+               <div class="form-group-w3l">
+                  <p>Email</p>
+                  <input type="Email" name="email" value="{{user.email}}" placeholder="" required="">
+               </div>
+			</div>
+
+
+
+
+            <div class="sub-hedder">
+               <h2> Please rate my Website</h2>
+               <div class="form-check">
+                  <input class="form-check-input" type="radio" name="select5" value="Very Bad" checked="">
+                  <label class="form-check-label">
+                  Very Bad
+                  </label>
+               </div>
+               <div class="form-check">
+                  <input class="form-check-input" type="radio" name="select5" value="Bad" checked="">
+                  <label class="form-check-label">
+                  Bad
+                  </label>
+               </div>
+               <div class="form-check">
+                  <input class="form-check-input" type="radio" name="select5" value="Very Good" checked="">
+                  <label class="form-check-label">
+                  Very Good
+                  </label>
+               </div>
+               <div class="form-check">
+                  <input class="form-check-input" type="radio" name="select5" value="Good" checked="">
+                  <label class="form-check-label">
+                  Good
+                  </label>
+               </div>
+               <div class="form-check">
+                  <input class="form-check-input" type="radio" name="select5" value="Excellent" checked="">
+                  <label class="form-check-label">
+                  Excellent
+                  </label>
+               </div>
+            </div>
+            <div class="form-control-w3l">
+               <p>Any Message...</p>
+               <textarea name="Message" placeholder=""></textarea>
+            </div>
+
+    <!-- form fields -->
+                <button type="submit">Submit</button>
+
+
+<!--            <button type="submit" id="submit" class="btn btn-primary">Submit</button>-->
+         </form>
+      </div>
+      <!-- copyright -->
+
+      <!-- //copyright -->
+</body>
+</html>
+

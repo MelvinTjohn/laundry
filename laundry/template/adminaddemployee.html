@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Laundries - Laundry Category Bootstrap Responsive Website Template - Home : W3Layouts</title>
+    <!-- Google fonts -->
+    <link href="//fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Template CSS Style link -->
+    <link rel="stylesheet" href="{%static 'assets/css/style-starter.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<!-- header -->
+    <header id="site-header" class="fixed-top">
+        <div class="container" style="margin-top:15px; margin-left:120px;">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="">
+                    <span>L</span>aundries<i class="fas fa-hands-wash"></i>
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+                    <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarScroll" style="margin-left:150px;">
+                    <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="admin_home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="adminviewuser">View User</a>
+                        </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="adminviewemployee">View Employee</a>
+                          </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="adminviewwork">View Work</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="adminpaymentdetails">Payed Details</a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="adminviewservices">View Services</a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="add_services">Add Services</a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="adminaddemployee">Add Employee</a>
+
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link " href="adminviewcustomerreview">Customer Review</a>
+
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link " href="home">Logout</a>
+
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+{% if messages %}
+    <div class="container">
+        <div class="alert alert-success alert-dismissible messages" style="margin-top:100px;">
+            {% for message in messages %}
+            {{message}}
+                        <button type="button" class="close" data-dismiss="alert">*</button>
+
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+
+<!--<img src="{%static 'assets/images/depositphotos_477992834-stock-video-glowing-neon-line-magnifying-glass.jpg'%}" alt="" width="1441" height="742">-->
+<form style="position:absolute; padding-top:1%;padding-left:3%; margin-top:150px; width:1000px; margin-left:450px; height:10px;" action="adminaddemployee" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+<div>
+  <div class="form-group row">
+    <label  class="col-sm-2 col-form-label">Enter Name</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" placeholder="Full Name" name="fname">
+    </div>
+  </div><br>
+    <div class="form-group row">
+    <label  class="col-sm-2 col-form-label">Enter Username</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" placeholder="Username" name="us_name">
+    </div>
+  </div><br>
+    <div class="form-group row">
+    <label  class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" placeholder="email" name="e_mail">
+    </div>
+  </div><br>
+    <div class="form-group row">
+    <label  class="col-sm-2 col-form-label">Enter Password</label>
+    <div class="col-sm-4">
+      <input type="password" class="form-control" placeholder="password" name="pass">
+    </div>
+  </div><br>
+    <div class="form-group row">
+    <label  class="col-sm-2 col-form-label">Enter Address </label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" placeholder="Address" name="e_adrs">
+    </div>
+  </div><br>
+    <div class="form-group row">
+    <label  class="col-sm-2 col-form-label">Enter phone Number</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control"  placeholder="Phone Number" name="ph_no">
+    </div>
+  </div><br>
+    <div class="form-group row">
+    <label  class="col-sm-2 col-form-label">Enter Pincode</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" placeholder="Pincode" name="e_pincode">
+    </div>
+  </div><br>
+    <div class="form-group row">
+    <label  class="col-sm-2 col-form-label">Enter Location</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" id="colFormLabel1" placeholder="Location" name="loc">
+    </div>
+  </div><br>
+
+<!--  <div class="form-group row">-->
+<!--    <label  class="col-sm-2 col-form-label">Enter no of stock</label>-->
+<!--    <div class="col-sm-10">-->
+<!--      <input type="number" class="form-control" id="colFormLabel2" placeholder="Adding stock" name="quantity">-->
+<!--    </div>-->
+<!--  </div><br>-->
+
+
+
+  <div class="form-group row">
+    <label  class="col-sm-2 col-form-label">Upload Image</label>
+    <div class="col-sm-4">
+      <input type="file" class="form-control" placeholder="choose file" name="e_img">
+    </div>
+  </div><br>
+     <div class="form-group row">
+    <label  class="col-sm-2 col-form-label">Upload Biodata</label>
+    <div class="col-sm-4">
+      <input type="file" class="form-control" placeholder="choose file" name="e_bio">
+    </div>
+  </div><br>
+     <div class="form-group row">
+    <label  class="col-sm-2 col-form-label">Upload Licence</label>
+    <div class="col-sm-4">
+      <input type="file" class="form-control" id="colFormLabel4" placeholder="choose file" name="e_lic">
+    </div>
+  </div><br>
+
+<!--	<div class="form-group row">-->
+<!--	<label  class="col-sm-2 col-form-label">Enter description</label>-->
+<!--	<div class="col-sm-4">-->
+<!--		<textarea class="form-control"  placeholder="Enter description" name="description"></textarea>-->
+<!--	</div>-->
+<!--	</div><br>-->
+
+<!--	<div class="form-group row">-->
+<!--        <label  class="col-sm-2 col-form-label">Price</label>-->
+<!--    		<div class="col-sm-4">-->
+<!--				<input type="text" class="form-control"  placeholder="Enter price" name="price">-->
+<!--    		</div>-->
+<!--    </div><br>-->
+
+
+
+
+<!--&lt;!&ndash;			<div class="col-sm-1">&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;				<label>Enter net quantity</label>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;			</div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    		<div class="col-sm-3">&ndash;&gt;-->
+<!--&lt;!&ndash;				<input type="text" class="form-control"  placeholder="Enter netquantity" name="netquantity">&ndash;&gt;-->
+<!--&lt;!&ndash;			</div>&ndash;&gt;-->
+<!--&lt;!&ndash;  		</div>&ndash;&gt;-->
+
+
+<!--	<div class="form-group row">-->
+<!--	<label  class="col-sm-2 col-form-label">Enter category</label>-->
+<!--	<div class="col-sm-4">-->
+<!--&lt;!&ndash;		<select style="width:225px;height:33px;"><option name="category"> Men</option><option name="category"> Women</option><option name="category"> For Gift</option></select>&ndash;&gt;-->
+<!--			<select name="category" class="custom-select tm-select-accounts" style="width:225px;height:35px;border-width:0.7px;width:300px;border-color:#d9d7d7;border-radius:5px">-->
+<!--                <option value="select here">Select Here</option>-->
+<!--                <option value="Normal wash"> Normal wash</option>-->
+<!--                <option value="Normal wash+Iron"> Normal wash+Iron</option>-->
+<!--                <option value="Premium wash"> Premium wash</option>-->
+<!--            </select>-->
+
+<!--&lt;!&ndash;	  <input type="" class="form-control"  placeholder="Enter category" name="category">&ndash;&gt;-->
+<!--	</div>-->
+<!--	</div><br>-->
+
+<!--	<div class="form-group row">-->
+<!--	<label for="colFormLabel1" class="col-sm-2 col-form-label">Enter fragrance</label>-->
+<!--	<div class="col-sm-10">-->
+<!--	  <input type="text" class="form-control"  placeholder="Enter fragrance" name="fragrance">-->
+<!--	</div>-->
+<!--	</div><br><br>-->
+
+
+        <input class="but" style="position:absolute;top:675px;margin-left:200px;margin-top:120px;" type="submit" name="submit" value="submit">
+
+</div>
+</form>
+
+</body>
+</html>

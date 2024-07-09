@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zxx">
+{% load static %}
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Cleanfreshly a Home Maintenance & Service Category Bootstrap Responsive Web Template | Services :: W3layouts</title>
+	<!-- Template CSS -->
+	<link rel="stylesheet" href="{% static 'assets/css/style-starter.css' %}">
+	<!-- Google Fonts -->
+	<link href="//fonts.googleapis.com/css?family=Josefin+Sans:400,400i,500,600,700&display=swap" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Lato:300,400,400i,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<!--w3l-header-->
+	<section class="w3l-top-header-content">
+		<div class="hny-top-menu">
+			<div class="container">
+				<div class="row">
+					<ul class="accounts col-sm-8">
+						<li class="top_li"><span class="fa fa-clock-o"></span> <a href="#">Monday - Friday: 10:00 - 18:00</a></li>
+						<li class="top_li mr-lg-0"><span class="fa fa-envelope-o"></span> <a href="mailto:laundary@gmail.com" class="mail">cleanfreshly10@gmail.com</a></li>
+						<li class="top_li"><span class="fa fa-phone"></span> <a href="tel:+1425897555">8921451563</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--//top-header-content-->
+	<header class="w3l-header-nav">
+		<nav class="navbar navbar-expand-lg navbar-light fill px-lg-0 py-0 px-3">
+			<a href="../../../userhome"><span class="fa fa-arrow-circle-left btn btn-secondary "></span></a>
+			<div class="container">
+				<h1><a class="navbar-brand" href="/">L<span>aundary</span></a></h1>
+				<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="fa icon-expand fa-bars"></span>
+					<span class="fa icon-close fa-times"></span>
+				</button>
+			</div>
+		</nav>
+	</header>
+	<br><br>
+	<h2 style="color:green">Your booking is successful</h2>
+<!--	<table class="table table-striped mt-5" border="2">-->
+<!--		<thead>-->
+<!--			<tr>-->
+<!--				<th>id</th>-->
+<!--				<th>name</th>-->
+<!--				<th>email</th>-->
+<!--				<th>address</th>-->
+<!--				<th>number</th>-->
+<!--				<th>service_name</th>-->
+<!--				<th>created_at</th>-->
+<!--				<th>service_price</th>-->
+<!--			</tr>-->
+<!--		</thead>-->
+<!--		<tbody>-->
+<!--			{% for i in c %}-->
+<!--			<tr>-->
+<!--				<td>{{ i.id }}</td>-->
+<!--				<td>{{ i.booked_name }}</td>-->
+<!--				<td>{{ i.email }}</td>-->
+<!--				<td>{{ i.address }}</td>-->
+<!--				<td>{{ i.number }}</td>-->
+<!--				<td>{{ i.s_name }}</td>-->
+<!--				<td>{{ i.created_at }}</td>-->
+<!--				<td>{{ i.s_price }}</td>-->
+<!--			</tr>-->
+<!--			{% endfor %}-->
+<!--		</tbody>-->
+<!--	</table>-->
+	<script src="{% static 'assets/js/jquery-3.3.1.min.js' %}"></script>
+	<script>
+		$(function() {
+			$('.navbar-toggler').click(function() {
+				$('body').toggleClass('noscroll');
+			});
+		});
+	</script>
+	<script src="{% static 'assets/js/jquery.waypoints.min.js' %}"></script>
+	<script src="{% static 'assets/js/jquery.countup.js' %}"></script>
+	<script>
+		$('.counter').countUp();
+	</script>
+	<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+</body>
+</html>

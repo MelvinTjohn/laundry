@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Laundries - Laundry Category Bootstrap Responsive Website Template - Home : W3Layouts</title>
+    <!-- Google fonts -->
+    <link href="//fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Template CSS Style link -->
+    <link rel="stylesheet" href="{%static 'assets/css/style-starter.css' %}">
+</head>
+<body>
+<!-- header -->
+    <header id="site-header" class="fixed-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="">
+                    <span>L</span>aundries<i class="fas fa-hands-wash"></i>
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+                    <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="admin_home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="adminviewuser">View Users</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="adminviewemployee">View Employee</a>
+                        </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="adminviewwork">View Work</a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="adminviewservices">View Services</a>
+
+                        </li>
+
+                         <li class="nav-item">
+                            <a class="nav-link" href="add_services">Add Services</a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="adminaddemployee">Add Employee</a>
+
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link " href="adminviewcustomerreview">Customer Review</a>
+
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link " href="home">Logout</a>
+
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+<br>
+<br>
+<!--content start-->
+
+
+<!--<div class="admin">-->
+<!--                    <h1 align="center" style="color:#003c61; font-weight:bold;font-size:70px;">EDIT COURSE</h1>-->
+<!--</div>-->
+
+<!--            {% if messages %}-->
+<!--			<div class="container">-->
+<!--			<div class="alert alert-success alert-dismissible messages">-->
+<!--    		{% for message in messages %}-->
+<!--    		<button type="button" class="close" data-dismiss="alert">x</button>-->
+<!--     			{{message}}-->
+<!--  			</div>-->
+<!--     		{% endfor %}-->
+<!--			</div>-->
+<!--			{% endif %}-->
+            <div class="services" style="margin-left:200px; margin-top:100px; margin-right:300px;">
+                    <form action="../updating/{{d.id}}" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <label  style="color:black;font-weight:bold;font-size:16px;">Image</label><br>
+                                    <img src="{{d.s_img.url}}">
+<!--                                    <input type="file" class="form-control" id="cimg" name="cs_img" required>-->
+                                </div>
+                                <div class="form-group">
+                                    <label for="cname" style="color:black;font-weight:bold;font-size:16px;">Service Name</label>
+                                    <input type="text" class="form-control" id="cname" name="cs_name"  value="{{d.s_name}}" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cdes" style="color:black;font-weight:bold;font-size:16px;">Service Description</label>
+                                    <textarea class="form-control" id="cdes" name="cdescription" rows="3"   required>{{d.description}}</textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cname" style="color:black;font-weight:bold;font-size:16px;">Price</label>
+                                    <input type="text" class="form-control" id="cprice" name="c_price"  value="{{d.price}}" required>
+                                </div>
+
+
+                                <br>
+                                <button type="submit" style="background-color: #003c61; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='#0056b3'" onmouseout="this.style.backgroundColor='#007BFF'">Submit</button>
+
+
+                    </form>
+            </div>
+<!--    content end-->
+
+
+
+
+
+    <!-- Javascript files-->
+    <script>
+                function deleteCourse() {
+            // Add your delete logic here
+            alert('Delete function will be implemented here.');
+                    }
+
+                function showEditForm(courseId) {
+            var formId = 'editForm_' + courseId;
+            document.getElementById(formId).style.display = 'block';
+        }
+
+    </script>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/jquery-3.0.0.min.js' %}"></script>
+    <script src="{% static 'js/plugin.js'%}"></script>
+    <!-- sidebar -->
+    <script src="{% static 'js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+    <!-- javascript -->
+    <script src="{% static 'js/owl.carousel.js' %}"></script>
+    <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+ <!-- footer section end -->
+</body>
+</html>

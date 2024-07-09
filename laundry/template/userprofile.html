@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Laundries - Laundry Category Bootstrap Responsive Website Template</title>
+    <!-- Google fonts -->
+    <link href="//fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Template CSS Style link -->
+    <link rel="stylesheet" href="{%static 'assets/css/style-starter.css' %}">
+    <style>
+        /* Custom styles for content section */
+        .profile-details {
+            text-align: center;
+        }
+
+        .profile-details img {
+            width: 150px; /* Adjust as needed */
+            height: 150px; /* Adjust as needed */
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .profile-form {
+            background-color: #f8f9fa; /* Adjust background color as needed */
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .profile-form form {
+            margin-bottom: 0; /* Remove default margin */
+        }
+
+        .profile-form .form-group {
+            margin-bottom: 20px; /* Adjust spacing between form elements */
+        }
+
+        .profile-form .btn.profile-button {
+            width: 100%; /* Make button full width */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header -->
+    <header id="site-header" class="fixed-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="home">
+                    <span>L</span>aundries<i class="fas fa-hands-wash"></i>
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+                    <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="../userhome">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../userabout">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../userservices">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../usercontact">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../uservieworder">vieworder</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../bookingdetails">Booking Details</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="userprofile">Userprofile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="home">Logout</a>
+
+                        </li>
+                    </ul>
+				</div>
+			</nav>
+		</div>
+	</header>
+    <!-- //header -->
+<br>
+    <br>
+    <!-- content -->
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+<!--				<div class="card" style="position:relative ;top:100px;bottom:100px;">-->
+            <div class="card-body">
+                <div class="profile-details text-center">
+                    <img class="rounded-circle" src="{{d.u_img.url}}" alt="User Image">
+                    <div class="mt-3">
+                        <span class="font-weight-bold">{{d.u_name}}</span><br>
+                        <span class="text-black-50">{{d.email}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row">
+
+            <div class="col-md-6 offset-md-3" >
+
+                <div class="profile-form mt-3" >
+                    <form action="../userprofile/{{d.id}}" method="post" enctype="multipart/form-data" >
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" value="{{d.u_name}}">
+                        </div>
+
+                         <div class="form-group">
+                            <label for="nmbr">Mobile Number</label>
+                            <input type="text" class="form-control" id="nmbr" name="nmbr" value="{{d.phonenumber}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="adrss">Address</label>
+                            <input type="text" class="form-control" id="adrss" name="adrss" value="{{d.u_adrs}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email ID</label>
+                            <input type="text" class="form-control" id="email" name="email" value="{{d.email}}">
+                        </div>
+<!--                        <div class="row">-->
+<!--                            <div class="col-md-6">-->
+<!--                                <div class="form-group">-->
+<!--                                    <label for="udistrict">District</label>-->
+<!--                                    <input type="text" class="form-control" id="udistrict" name="udistrict" value="{{ d.u_district }}">-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="col-md-6">-->
+<!--                                <div class="form-group">-->
+<!--                                    <label for="ucity">City</label>-->
+<!--                                    <input type="text" class="form-control" id="ucity" name="ucity" value="{{ d.u_city }}">-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+                        <div class="form-group">
+                            <label for="upincode">Pincode</label>
+                            <input type="text" class="form-control" id="upincode" name="upincode" value="{{d.pncd}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="user_img">Image</label>
+                            <input type="file" class="form-control" id="user_img" name="user_img" accept="image/*">
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn profile-button">Save Update</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //content -->
+
+    <!-- footer -->
+    <!-- Footer content -->
+    <!-- //footer -->
+
+    <!-- Js scripts -->
+    <!-- move top -->
+    <!-- JavaScript for move top button -->
+    <!-- //move top -->
+
+    <!-- common jquery plugin -->
+    <!-- JavaScript for common jQuery plugin -->
+    <!-- //common jquery plugin -->
+
+    <!-- theme switch js (light and dark)-->
+    <!-- JavaScript for theme switch -->
+    <!-- //theme switch js (light and dark)-->
+
+    <!-- MENU-JS -->
+    <!-- JavaScript for menu -->
+    <!-- //MENU-JS -->
+
+    <!-- disable body scroll which navbar is in active -->
+    <!-- JavaScript for disabling body scroll -->
+    <!-- //disable body scroll which navbar is in active -->
+
+    <!-- bootstrap -->
+    <!-- JavaScript for bootstrap -->
+    <!-- //bootstrap -->
+    <!-- //Js scripts -->
+</body>
+
+</html>

@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Laundries - Laundry Category Bootstrap Responsive Website Template - Contact Us </title>
+    <!-- Google fonts -->
+    <link href="//fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Template CSS Style link -->
+    <link rel="stylesheet" href="{%static 'assets/css/style-starter.css '%}">
+<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <!-- header -->
+    <header id="site-header" class="fixed-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="home">
+                    <span>L</span>aundries<i class="fas fa-hands-wash"></i>
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+                    <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="user">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="userabout">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="userservices">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="usercontact">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="uservieworder">vieworder</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="bookingdetails">Booking Details</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="userprofile">Userprofile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="home">Logout</a>
+
+                        </li>
+                    </ul>
+<!--                    <form action="#error" method="GET" class="d-flex search-header ms-lg-2">-->
+<!--                        <input class="form-control" type="search" placeholder="Enter Keyword..." aria-label="Search"-->
+<!--                            required>-->
+<!--                        <button class="btn btn-style" type="submit"><i class="fas fa-search"></i></button>-->
+<!--                    </form>-->
+<!--                </div>-->
+                <!-- toggle switch for light and dark theme -->
+<!--                <div class="cont-ser-position">-->
+<!--                    <nav class="navigation">-->
+<!--                        <div class="theme-switch-wrapper">-->
+<!--                            <label class="theme-switch" for="checkbox">-->
+<!--                                <input type="checkbox" id="checkbox">-->
+<!--                                <div class="mode-container">-->
+<!--                                    <i class="gg-sun"></i>-->
+<!--                                    <i class="gg-moon"></i>-->
+<!--                                </div>-->
+<!--                            </label>-->
+<!--                        </div>-->
+<!--                    </nav>-->
+<!--                </div>-->
+                <!-- //toggle switch for light and dark theme -->
+            </nav>
+        </div>
+    </header>
+    <!-- //header -->
+
+    <!-- inner banner -->
+    <section class="inner-banner py-5">
+        <div class="w3l-breadcrumb py-lg-5">
+            <div class="container pt-5 pb-sm-4 pb-2">
+                <h4 class="inner-text-title font-weight-bold pt-5">Contact Us</h4>
+                <ul class="breadcrumbs-custom-path">
+                    <li><a href="home">Home</a></li>
+                    <li class="active"><i class="fas fa-angle-right mx-2"></i>Contact</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- //inner banner -->
+
+    <!-- contact -->
+    {% if messages %}
+			<div class="container" style="position:absolute;left:465px;width:480px;">
+				<div class="alert alert-success alert-dismissible messages">
+					{% for message in messages %}
+						<button type="button" class="close" data-dismiss="alert">x</button>
+					 {{message}}
+				</div>
+				 {% endfor %}
+			</div>
+			{% endif %}
+    <section class="w3l-w3l-contacts-12 py-5">
+        <div class="contact-top py-lg-5 py-md-4 py-2">
+            <div class="container">
+                <div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:500px;">
+                    <h5 class="sub-title">Get In Touch</h5>
+                    <h3 class="title-style">Feedback</h3>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 contacts12-main">
+                        <form action="feedback" method="post" class="main-input">
+                            {% csrf_token %}
+                            <div class="row top-inputs">
+                                <div class="col-md-6">
+                                    <input type="text" placeholder="Name" name="Name" id="w3lName" required="">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" name="email" placeholder="Email" id="w3lSender" required="">
+                                </div>
+                            </div>
+                            <input type="text" placeholder="Phone Number" name="phno" id="w3lNamee" required="">
+                            <textarea placeholder="Message" name="Message" id="w3lMessage" required=""></textarea>
+                            <div class="text-end">
+                                <button type="submit" class="btn btn-style">Send Now</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-4 ps-lg-5 mt-md-0 mt-4">
+                        <h3 class="title-style mb-4">Contact Info</h3>
+                        <div class="contact">
+                            <a href="mailto:hello@example.com">
+                                <p class="contact-text-sub">laundries@gmail.com</p>
+                            </a>
+                            <a href="tel:+7-800-999-800">
+                                <p class="contact-text-sub">+91-800-999-800</p>
+                            </a>
+                            <p class="contact-text-sub">st aungustine building,kadavnthara,kochi<br>682020 <br>Kerala.</p>
+<!--                            <div class="buttons-team.s">-->
+<!--                                <a href="#team"><span class="fab fa-facebook-square" aria-hidden="true"></span></a>-->
+<!--                                <a href="#team"><span class="fab fa-twitter-square" aria-hidden="true"></span></a>-->
+<!--                                <a href="#team"><span class="fab fa-google-plus-square" aria-hidden="true"></span></a>-->
+<!--                            </div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- contact map -->
+    <section class="w3l-contacts-1">
+        <div class="contacts">
+            <div class="contacts-content">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.919611368934!2d76.25032051465446!3d10.011245892827962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b083193c5b1d5c1%3A0x55f0fd6e09e33309!2sKochi%2C%20Kerala!5e0!3m2!1sen!2sin!4v1647330846305!5m2!1sen!2sin"
+                    width="100%" height="650" frameborder="0" style="border:0" allowfullscreen></iframe>
+                <address>
+                    <h4>Kochi</h4>
+                    <a href="mailto:hello@w3layouts.com">Email: laundries@gmail.com</a>
+                    <a href="tel:8-800-999-800">Tel: +91-800-999-800</a>
+                </address>
+            </div>
+        </div>
+    </section>
+    <!-- //contact -->
+
+    <!-- footer -->
+    <footer class="w3l-footer-29-main">
+        <div class="footer-29-w3l py-5">
+            <div class="container pt-md-5 pt-4">
+                <div class="w3l-footer-text-style">
+                    <div class="footer-list-cont d-flex align-items-center justify-content-between mb-5">
+                        <h6 class="foot-sub-title">Contact Us</h6>
+<!--                        <div class="main-social-footer-29">-->
+<!--                            <a href="#facebook" class="facebook"><i class="fab fa-facebook-f"></i></a>-->
+<!--                            <a href="#twitter" class="twitter"><i class="fab fa-twitter"></i></a>-->
+<!--                            <a href="#instagram" class="instagram"><i class="fab fa-instagram"></i></a>-->
+<!--                            <a href="#linkedin" class="linkedin"><i class="fab fa-linkedin-in"></i></a>-->
+<!--                        </div>-->
+                    </div>
+                </div>
+                <div class="row footer-top-29 pt-lg-5 pt-sm-4">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="address-grid">
+                            <h5>St'augustine building,kadavanthara,kochi<br>682020 <br> Kerala.</h5>
+                            <h5 class="mt-sm-5 mt-4">Everyday: <span> 7 AM - 8 PM</span></h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 mt-sm-0 mt-4">
+                        <div class="address-grid">
+                            <h5 class="top-bold">Phone</h5>
+                            <h5 class="phone-number-text mt-2"><a href="tel:+1(21) 112 7368">+1(21) 112 7368</a></h5>
+                        </div>
+                        <div class="address-grid mt-sm-5 mt-4">
+                            <h5 class="top-bold">E-mail</h5>
+                            <h5 class="email-cont-text mt-1"> <a href="mailto:laundr@maiiesl.com"
+                                    class="mail">laundries@mail.com</a></h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-5 footer-list-menu ps-lg-0 mt-lg-0 mt-sm-5 mt-4">
+                        <div class="address-grid">
+                            <h5 class="mb-sm-4 mb-3 pb-lg-2 top-bold">Support Links</h5>
+                            <ul>
+                                <li><a href="about">Privacy Policy</a></li>
+                                <li><a href="about"> Terms of Service</a></li>
+                                <li><a href="contact">Contact us</a></li>
+                                <li><a href="contact"> Support</a></li>
+                            </ul>
+                        </div>
+                    </div>
+<!--                    <div class="address-grid col-lg-4 col-md-6 col-sm-7 mt-lg-0 mt-sm-5 mt-4 w3l-footer-16-main">-->
+<!--                        <h5 class="top-bold">Subscribe Here</h5>-->
+<!--                        <form action="#" class="subscribe d-flex mt-sm-4 mt-3 pt-lg-2 mb-4" method="post">-->
+<!--                            <input type="email" name="email" placeholder="Email Address" required="">-->
+<!--                            <button><span class="fa fa-paper-plane" aria-hidden="true"></span></button>-->
+<!--                        </form>-->
+<!--                        <p>Subscribe to our mailing list and get updates to your email inbox.</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+                <!-- copyright -->
+                <div class="w3l-copyright text-center mt-lg-5 mt-4 pt-sm-4 pt-3">
+                    <p class="copy-footer-29">© 2022 Laundries. All rights reserved. Design by <a
+                            href="https://w3layouts.com/" target="_blank">
+                            Melvin's</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- //footer -->
+
+    <!-- Js scripts -->
+    <!-- move top -->
+    <button onclick="topFunction()" id="movetop" title="Go to top">
+        <span class="fas fa-level-up-alt" aria-hidden="true"></span>
+    </button>
+    <script>
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("movetop").style.display = "block";
+            } else {
+                document.getElementById("movetop").style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+    <!-- //move top -->
+
+    <!-- common jquery plugin -->
+    <script src="{%static 'assets/js/jquery-3.3.1.min.js' %}"></script>
+    <!-- //common jquery plugin -->
+
+    <!-- theme switch js (light and dark)-->
+    <script src="{%static 'assets/js/theme-change.js '%}"></script>
+    <!-- //theme switch js (light and dark)-->
+
+    <!-- MENU-JS -->
+    <script>
+        $(window).on("scroll", function () {
+            var scroll = $(window).scrollTop();
+
+            if (scroll >= 80) {
+                $("#site-header").addClass("nav-fixed");
+            } else {
+                $("#site-header").removeClass("nav-fixed");
+            }
+        });
+
+        //Main navigation Active Class Add Remove
+        $(".navbar-toggler").on("click", function () {
+            $("header").toggleClass("active");
+        });
+        $(document).on("ready", function () {
+            if ($(window).width() > 991) {
+                $("header").removeClass("active");
+            }
+            $(window).on("resize", function () {
+                if ($(window).width() > 991) {
+                    $("header").removeClass("active");
+                }
+            });
+        });
+    </script>
+    <!-- //MENU-JS -->
+
+    <!-- disable body scroll which navbar is in active -->
+    <script>
+        $(function () {
+            $('.navbar-toggler').click(function () {
+                $('body').toggleClass('noscroll');
+            })
+        });
+    </script>
+    <!-- //disable body scroll which navbar is in active -->
+
+    <!-- bootstrap -->
+    <script src="{%static 'assets/js/bootstrap.min.js '%}"></script>
+    <!-- //bootstrap -->
+    <!-- //Js scripts -->
+</body>
+
+</html>

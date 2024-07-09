@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Laundries - Laundry Category Bootstrap Responsive Website Template - Home : W3Layouts</title>
+    <!-- Google fonts -->
+    <link href="//fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Template CSS Style link -->
+    <link rel="stylesheet" href="{%static 'assets/css/style-starter.css' %}">
+</head>
+<body>
+<!-- header -->
+    <header id="site-header" class="fixed-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="">
+                    <span>L</span>aundries<i class="fas fa-hands-wash"></i>
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+                    <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="admin">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="adminviewuser">View Users</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="adminviewemployee">View Employee</a>
+                        </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="adminviewwork">View Work</a>
+
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="adminpaymentdetails">Payed Details</a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="adminviewservices">View Services</a>
+
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="add_services">Add Services</a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="adminaddemployee">Add Employee</a>
+
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link active" href="adminviewcustomerreview">Customer Review</a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="home">Logout</a>
+
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+<br>
+<br>
+<br>
+<br>
+<br>
+<img src="{%static 'assets/images/washing-machine-laundry-tumble-drier-housework.jpg '%}" alt="" width="1441" height="400">
+<div class="map-full">
+	<div class="contact-box">
+        <div class="container"><br>
+			<table class="table table-bordered">
+				<thead>
+				<tr>
+                    <th>Name</th>
+					<th>Phone number</th>
+					<th>Email</th>
+					<th>Feedback</th>
+		  		</tr>
+		  		</thead>
+				<tbody>
+				{% for i in d %}
+				<tr>
+<!--                    <td><img src="{{i.s_img.url}}" height="150" width="150"></td>-->
+					<td>{{i.f_name}}</td>
+					<td>{{i.f_num}}</td>
+        			<td>{{i.f_email}}</td>
+                    <td>{{i.f_feedback}}</td>
+                    <td><a class="btn btn-style mt-4" href="fdelete/{{i.id}}">Delete</a></td>
+
+				</tr>
+    			{% endfor %}
+    			</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+</body>
+</html>

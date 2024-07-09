@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Laundries - Booking</title>
+    <link href="//fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'assets/css/style-starter.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .course-card, .course-cards {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .course-card {
+            width: 500px;
+            height: 1000px;
+            margin-top: 50px;
+        }
+
+        .course-cards {
+            width: 350px;
+            margin-top: 50px;
+        }
+
+        #calendar {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        #booking-form, #booking-form2 {
+            max-width: 800px;
+            margin: 20px 40px;
+        }
+
+        #booking-form input[type="date"],
+        #booking-form input[type="time"],
+        #booking-form input[type="text"],
+        #booking-form textarea,
+        #booking-form2 input[type="text"] {
+            width: calc(100% - 20px);
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+
+        #booking-form button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #booking-form button:hover {
+            background-color: #0056b3;
+        }
+
+        .containers {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="site-header" class="fixed-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="home">
+                    <span>L</span>aundries<i class="fas fa-hands-wash"></i>
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+                    <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll">
+<!--                        <li class="nav-item">-->
+<!--                            <a class="nav-link" href="userservices">Services</a>-->
+<!--                        </li>-->
+                        <li class="nav-item">
+                            <a class="nav-link active" href="bookingservice">Book</a>
+                        </li>
+<!--                        <li class="nav-item">-->
+<!--                            <a class="nav-link" href="uservieworder">View Order</a>-->
+<!--                        </li>-->
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+<br><br><br>
+
+    {% if messages %}
+    <div class="container mt-5">
+        {% for message in messages %}
+        <div class="alert {% if message.tags == 'success' %}alert-success{% elif message.tags == 'error' %}alert-danger{% endif %} alert-dismissible messages">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">✖</a>
+            {{ message }}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    <br><br>
+    <a href="../../userservices"><span class="  btn btn-secondary ">Back</span></a>
+
+    <div class="container mt-5">
+        <div class="course-cards">
+            <div id="booking-form2">
+                <form method="post" action="../single_razor/{{d.id}}">
+                    {% csrf_token %}
+                    <label for="a_name">NAME:</label><br>
+                    <input type="text" id="a_name" name="u_name" class="form-control" value="{{ user.u_name }}" readonly><br>
+                    <label for="u_address">ADDRESS:</label><br>
+                    <input type="text" id="u_address" name="u_address" class="form-control" value="{{ user.u_adrs }}" readonly><br>
+                    <label for="u_pincode">PINCODE:</label><br>
+                    <input type="text" id="u_pincode" name="u_pincode" class="form-control" value="{{ user.pncd }}" readonly><br>
+                    <label for="u_email">EMAIL:</label><br>
+                    <input type="text" id="u_email" name="u_email" class="form-control" value="{{ user.email }}" readonly><br>
+                    <label for="u_phone">PHONE NUMBER:</label><br>
+                    <input type="text" id="u_phone" name="u_phone" class="form-control" value="{{ user.phonenumber }}" readonly><br>
+                </form>
+            </div>
+        </div>
+        <div class="course-card">
+            <div id="booking-form">
+                <form method="post" action="../single_razor/{{d.id}}">
+                    {% csrf_token %}
+                    <label for="e_title">SERVICE NAME:</label><br>
+                    <input type="text" id="e_title" name="s_name" class="form-control" value="{{ d.s_name }}" readonly><br>
+                    <label for="e_price">Rate:</label><br>
+                    <input type="text" id="e_price" name="price" class="form-control" value="{{ d.price }}" readonly><br>
+                    <label for="e_title">Description:</label><br>
+                    <input type="text" id="description" name="description" class="form-control" value="{{ d.description }}" readonly><br>
+                    {{ form.as_p }}
+                    <label for="booking-date">DATE:</label>
+                    <input type="date" id="booking-date" name="booking_date" class="form-control" required><br>
+                    <label for="booking-location">ADD DETAILS (location/about clothes):</label><br>
+                    <textarea id="booking-location" name="add_details" class="form-control" required></textarea><br>
+                    <label for="total">TOTAL AMOUNT:</label><br>
+                    <input type="text" id="total" name="total" class="form-control" value="{{d.price}}" readonly><br>
+                    <div class="containers">
+                        <button type="submit" class="btn btn-primary">Payment</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<script>
+    // Get today's date in YYYY-MM-DD format
+    var today = new Date().toISOString().split('T')[0];
+    // Set the min attribute to today's date
+    document.getElementById('booking-date').setAttribute('min', today);
+    // Optionally, set the default value to today's date
+    document.getElementById('booking-date').setAttribute('value', today);
+</script>
+</body>
+</html>

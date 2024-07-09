@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Laundries - Laundry Category Bootstrap Responsive Website Template - Contact Us </title>
+    <!-- Google fonts -->
+    <link href="//fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Template CSS Style link -->
+    <link rel="stylesheet" href="{%static 'assets/css/style-starter.css '%}">
+<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{% static 'assets/css/reviewstyle.css'%}" type="text/css" media="all" />
+    <script>
+         addEventListener("load", function () {
+         	setTimeout(hideURLbar, 0);
+         }, false);
+
+         function hideURLbar() {
+         	window.scrollTo(0, 1);
+         }
+      </script>
+    	<style>
+    .review-box {
+        border: 1px solid #ccc;
+        padding: 20px;
+        margin: 20px;
+        width: 500px;
+    }
+    .review-title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .review-content {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    .reviewer {
+        font-style: italic;
+        font-size: 14px;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- header -->
+    <header id="site-header" class="fixed-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="home">
+                    <span>L</span>aundries<i class="fas fa-hands-wash"></i>
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+                    <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="user">Home</a>
+                        </li>
+
+
+
+                    </ul>
+<!--                    <form action="#error" method="GET" class="d-flex search-header ms-lg-2">-->
+<!--                        <input class="form-control" type="search" placeholder="Enter Keyword..." aria-label="Search"-->
+<!--                            required>-->
+<!--                        <button class="btn btn-style" type="submit"><i class="fas fa-search"></i></button>-->
+<!--                    </form>-->
+<!--                </div>-->
+                <!-- toggle switch for light and dark theme -->
+<!--                <div class="cont-ser-position">-->
+<!--                    <nav class="navigation">-->
+<!--                        <div class="theme-switch-wrapper">-->
+<!--                            <label class="theme-switch" for="checkbox">-->
+<!--                                <input type="checkbox" id="checkbox">-->
+<!--                                <div class="mode-container">-->
+<!--                                    <i class="gg-sun"></i>-->
+<!--                                    <i class="gg-moon"></i>-->
+<!--                                </div>-->
+<!--                            </label>-->
+<!--                        </div>-->
+<!--                    </nav>-->
+<!--                </div>-->
+                <!-- //toggle switch for light and dark theme -->
+            </nav>
+        </div>
+    </header>
+<br><br><br><br><br><br><br><br>
+	<section class="w3l-bottom-grids-6">
+	<div class="review-box">
+		<label style="color:red">Very Bad:</label> <span class="count">{{ Vb }}|</span>
+  <label style="color:orange">Bad:</label> <span class="count">{{ Bd }}|</span>
+  <label style="color:#51843C">Good:</label> <span class="count">{{ Gd }}|</span>
+  <label style="color:#6AC247">Very Good:</label> <span class="count">{{ Vg }}|</span>
+
+  <label style="color:#4DFF07">Excellent:</label> <span class="count">{{ Ex }}</span>
+
+</div>
+		</section>
+
+<!--	------------------------------------------------------------------->
+
+
+
+<br><br><br><br>
+
+<section class="w3l-bottom-grids-6">
+
+<!--<a href="sendreviews" class="ml-lg-3 mt-lg-0 mt-3 btn btn-primary" >send reviews</a>-->
+
+
+	{% for review in user1 %}
+<div class="review-box">
+    <div class="review-title">-{{ review.radio_c }}</div>
+    <div class="review-content">
+        <h3>{{ review.Message }}</h3></div>
+        <div class="reviewer">-{{ review.user_name }}-{{ review.email }}</div>
+            <div class="reviewer">-{{ review.s_name }}</div>
+
+
+    </div>
+</div>
+{%endfor%}
+	</section>
+
+
+
+</body>
+
+</html>
+
+<script src="{% static 'assets/js/jquery-3.3.1.min.js'%}"></script>
+<!-- disable body scroll which navbar is in active -->
+
+<!--//-->
+<script>
+	$(function () {
+		$('.navbar-toggler').click(function () {
+			$('body').toggleClass('noscroll');
+		})
+	});
+</script>
+<!--/scroll-down-JS-->
+<!-- stats -->
+<script src="{% static 'assets/js/jquery.waypoints.min.js'%}"></script>
+<script src="{% static 'assets/js/jquery.countup.js'%}"></script>
+<script>
+	$('.counter').countUp();
+</script>
+<!-- //stats -->
+<!-- //script -->
+
+<script src="{% static 'assets/js/bootstrap.min.js'%}"></script>
